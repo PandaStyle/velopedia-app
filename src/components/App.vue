@@ -1,4 +1,4 @@
 <template >
-   hello from main tmeplate
+   hello TEST
 </template>
 
