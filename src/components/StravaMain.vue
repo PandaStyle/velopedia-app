@@ -1,0 +1,3 @@
+<template >
+   Strava Main
+</template>

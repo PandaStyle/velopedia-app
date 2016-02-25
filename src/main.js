@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
 import App from './components/App.vue'
+import StravaLogin from './components/StravaLogin.vue'
+import StravaMain from './components/StravaMain.vue'
 
 
 import $ from 'jquery';
@@ -31,30 +33,16 @@ Vue.use(VueResource);
 var router = new Router({
   transitionOnLoad: true,
   hashbang: false
-});
+})
 
-/*
 router.map({
-  '/feed/:type': {
-    component: FeedView,
-      subRoutes: {
-          '/tile': {
-              component: TileView
-          },
-          '/list': {
-              component: ListView
-          }
-      }
+  '/stravalogin': {
+    component: StravaLogin
   },
-
-  '/search': {
-    component: SearchView
+  '/stravamain': {
+    component: StravaMain
   }
 });
 
-router.redirect({
-  '*': '/feed/all/tile'
-});
-*/
 
 router.start(App, '#app');
