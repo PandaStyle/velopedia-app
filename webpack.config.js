@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: './static',
-    publicPath: '/static/',
+    publicPath: 'http://localhost:8080' + '/static/',
     filename: 'build.js'
   },
   module: {

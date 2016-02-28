@@ -1,6 +1,5 @@
 <template >
-   <h1>Strava main</h1>
-   <button class="btn primary" id="getFriendsAct"> Get Friend activity </button>
+   <h1>News</h1>
     <div>{{items}}</div>
 </template>
 
@@ -10,7 +9,7 @@
 
 
    export default {
-        name: 'StravaMain',
+        name: 'News',
 
         data () {
             return {
@@ -23,7 +22,7 @@
             data (transition) {
                 let self = this;
 
-                this.apiURL = Config.API_URL + "strava/activities";
+                this.apiURL = Config.API_URL + "news/";
 
                 this.$http.get(this.apiURL, function (results, status, request) {
 

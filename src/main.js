@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
 import App from './components/App.vue'
+import Inspiration from './components/Inspiration.vue'
 import StravaLogin from './components/StravaLogin.vue'
 import StravaMain from './components/StravaMain.vue'
 
@@ -36,11 +37,11 @@ var router = new Router({
 })
 
 router.map({
-  '/stravalogin': {
-    component: StravaLogin
+  '/inspiration': {
+    component: Inspiration
   },
-  '/stravamain': {
-    component: StravaMain
+  '/strava': {
+    component: document.cookie.indexOf("strava_access_token") >= 0 ? StravaMain : StravaLogin
   }
 });
 
