@@ -26,7 +26,6 @@
 
                 this.$http.get(this.apiURL, function (results, status, request) {
 
-                    console.log(results)
                     transition.next({items: results});
 
                 }).error(function (data, status, request) {

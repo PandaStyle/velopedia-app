@@ -19,14 +19,18 @@ var Insp = Vue.extend({
 
     methods: {
         getUrl () {
+            var imgUrl = null;
+
             if(_.where(this.item.photos[0].alt_sizes, {width: 400}).length>0){
-                return _.where(this.item.photos[0].alt_sizes, {width: 400})[0].url;
+                imgUrl = _.where(this.item.photos[0].alt_sizes, {width: 400})[0].url;
             } else if(_.where(this.item.photos[0].alt_sizes, {width: 399}).length>0){
-                return _.where(this.item.photos[0].alt_sizes, {width: 399})[0].url;
+                imgUrl =  _.where(this.item.photos[0].alt_sizes, {width: 399})[0].url;
             } else {
                 console.log("Image doesn't have 400 or 399 width: ", this.item, " using size " + this.item.photos[0].alt_sizes[0].width);
-                return this.item.photos[0].alt_sizes[0].url;
+                imgUrl =  this.item.photos[0].alt_sizes[0].url;
             }
+
+            return imgUrl.replace(/^http:\/\//i, 'https://');
         }
     }
 });
