@@ -1,4 +1,4 @@
-<template >
+<template>
    <h1>News</h1>
     <div>{{items}}</div>
 </template>
@@ -20,9 +20,10 @@
 
         route: {
             data (transition) {
+                console.log("fdsfdsd")
                 let self = this;
 
-                this.apiURL = Config.API_URL + "news/";
+                this.apiURL = Config.API_URL + "news";
 
                 this.$http.get(this.apiURL, function (results, status, request) {
 
