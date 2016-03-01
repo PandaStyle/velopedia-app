@@ -1,12 +1,12 @@
-<template >
+<template>
    <h1>Inspriration</h1>
-    <div>{{items}}</div>
+    <div class="feed-view grid inspiration" data-columns v-salvattore="items">
 </template>
 
 
 <script type="text/babel">
     import Config from "../config"
-
+    import salvattore from '../directives/salvattore';
 
    export default {
         name: 'Inspiration',
@@ -22,8 +22,6 @@
 
         route: {
             data (transition) {
-                let self = this;
-
                 this.apiURL = Config.API_URL + "inspiration/" + this.offset + "/" + this.itemsSize;
 
                 this.$http.get(this.apiURL, function (results, status, request) {

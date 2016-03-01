@@ -4,6 +4,7 @@ import VueResource from 'vue-resource'
 
 import App from './components/App.vue'
 import Inspiration from './components/Inspiration.vue'
+import InspItem from './components/InspItem.js'
 import News from './components/News.vue'
 import StravaLogin from './components/StravaLogin.vue'
 import StravaMain from './components/StravaMain.vue'
@@ -14,18 +15,6 @@ import NProgress from '../node_modules/nprogress/nprogress.js';
 import imagesLoaded from '../node_modules/imagesloaded/imagesloaded.js';
 
 
-/*
-Vue.directive('img', function(url) {
-
-  var img = new Image();
-  img.src = url;
-
-  img.onload = function() {
-    this.el.src = url;
-    $(this.el).addClass("loaded")
-  }.bind(this);
-});
-*/
 
 
 Vue.use(Router);
@@ -35,7 +24,7 @@ Vue.use(VueResource);
 var router = new Router({
   transitionOnLoad: true,
   hashbang: false
-})
+});
 
 router.map({
   '/inspiration': {

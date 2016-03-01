@@ -19,3 +19,7 @@
    }
 </script>
 
+<style lang="sass">
+   @import "../styles/app.scss";
+</style>
+
