@@ -1,6 +1,7 @@
 
 import Vue from 'vue'
 import Salvattore from 'salvattore';
+import _ from 'lodash';
 import InspItem from '../components/InspItem.js'
 import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
 
@@ -8,9 +9,12 @@ var salvattoreInitialized = false;
 
 var salvattore = Vue.directive('salvattore', {
     update: function (items) {
-        var self = this;
 
-        var fragments = [];
+        //TODO: replace with global.offset
+        items = _.takeRight(items, 20);
+
+        var self = this,
+            fragments = [];
 
         if(items){
             for(var i = 0; i < items.length; i++){
@@ -36,7 +40,7 @@ var salvattore = Vue.directive('salvattore', {
             var imgLoad = imagesLoaded(self.el);
 
             imgLoad.on( 'progress', function( instance, image ) {
-                console.log("progress");
+                //console.log("progress");
             });
             imgLoad.on( 'always', function ( instance ) {
 

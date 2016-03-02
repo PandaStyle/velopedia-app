@@ -1,0 +1,175 @@
+@import "../styles/globals.scss";
+
+.tile {
+  @include defaulttransition();
+
+  display: block;
+  position: relative;
+  min-width: 100px;
+  min-height: 200px;
+  margin: 5px 10px 40px;
+  overflow: hidden;
+  border: 1px solid transparent;
+
+  &.loading {
+    min-height: 200px;
+  }
+
+  a.overlay {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  .tile-image {
+    overflow: hidden;
+  }
+
+  img {
+      @include defaulttransition();
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+
+      &[src="http://www.engraversnetwork.com/files/placeholder.jpg"] {
+        display: none;
+      }
+
+      opacity:0;
+      border-radius: $border-radius;
+      width: 100%;
+  }
+  img.loaded {
+    opacity: 1;
+  }
+
+
+  header {
+    @include defaulttransition();
+
+    text-align: left;
+    margin: 15px;
+
+    .title {
+      display: block;
+      text-decoration: none;
+      letter-spacing: 0px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #F1F1F1;
+
+      &:hover {
+        //text-decoration: underline;
+      }
+    }
+
+    .summary {
+      overflow: hidden;
+      max-height: 60px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: $summary-color;
+    }
+
+    .meta {
+      font-size: 14px;
+
+      .host {
+        padding-right: 15px;
+        color: $red;
+        text-decoration: none;
+      }
+
+      .sep {
+        margin: 0 15px;
+      }
+
+      .diff {
+        color: $summary-color;
+      }
+
+      .share {
+        @include defaulttransition();
+
+        float: right;
+        color: white;
+        font-size: 24px;
+        opacity: 0;
+        text-decoration: none;
+
+        &:hover {
+          color: $red !important;
+          cursor: pointer;
+        }
+
+        &.active {
+          color: $red !important;
+        }
+      }
+
+      .share.general {
+        margin-left: 5px;
+      }
+
+      .share.twitter {
+        margin: 0 5px;
+      },
+      .share.twitter:hover {
+        color: $twitter-color !important;
+      }
+      .share.facebook {
+        margin: 0 5px;
+      },
+      .share.facebook:hover {
+        color: $facebook-color !important;
+      },
+      .share.linkedin {
+        margin: 0 5px;
+      },
+      .share.linkedin:hover {
+        color: $linkedin-color !important;
+      }
+    }
+  }
+
+  &:hover {
+    @include defaulttransition();
+
+    border: 1px solid $summary-color;
+    border-radius: 1px;
+    
+    .summary {
+      @include defaulttransition();
+      color: #CCC;
+    }
+  }
+
+
+  &:hover img {
+    -webkit-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    transform: scale(1.06);
+    -webkit-transition-duration: 5s;
+    -moz-transition-duration: 5s;
+    -ms-transition-duration: 5s;
+    -o-transition-duration: 5s;
+    transition-duration: 5s;
+  }
+
+  &:hover header .meta .share  {
+    opacity: 1;
+  }
+}
+
+.light .tile:hover .summary {
+  @include defaulttransition();
+  color: #444;
+}

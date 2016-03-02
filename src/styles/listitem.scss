@@ -1,0 +1,111 @@
+@import "globals";
+
+.list-item {
+  @include defaulttransition();
+
+  display: block;
+  position: relative;
+  text-align: left;
+  margin: 30px 20px 30px 13px;
+
+  a.overlay {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 30px);
+  }
+
+
+  .title {
+      letter-spacing: 0px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #F1F1F1;
+      text-decoration: none;
+      display: block;
+    }
+
+    .summary {
+      overflow: hidden;
+      max-height: 60px;
+      line-height: 20px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: $summary-color;
+    }
+
+    .meta {
+      font-size: 14px;
+
+      .host {
+        padding-right: 15px;
+        color: $red;
+      }
+
+      .sep {
+        margin: 0 15px;
+      }
+
+      .diff {
+        color: $summary-color;
+      }
+
+      .share {
+        @include defaulttransition();
+
+        display: inline-block;
+        color: white;
+        font-size: 18px;
+        opacity: 0;
+        text-decoration: none;
+
+        &:hover {
+          color: $red !important;
+          cursor: pointer;
+        }
+
+        &.active {
+          color: $red !important;
+        }
+      }
+
+      .share.general {
+        margin-left: 15px;
+        margin-right: 5px;
+      }
+
+      .share.twitter {
+        margin: 0 3px;
+      },
+    .share.twitter:hover {
+      color: $twitter-color !important;
+    }
+      .share.facebook {
+        margin: 0 3px;
+      },
+    .share.facebook:hover {
+      color: $facebook-color !important;
+    },
+    .share.linkedin {
+      margin: 0 5px;
+    },
+    .share.linkedin:hover {
+      color: $linkedin-color !important;
+    }
+
+    }
+
+  &:hover .meta .share  {
+    opacity: 1;
+  }
+
+  &:hover {
+    .summary {
+      @include defaulttransition();
+      color: #CCC;
+    }
+  }
+
+}

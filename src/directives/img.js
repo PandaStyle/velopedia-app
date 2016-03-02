@@ -1,7 +1,7 @@
 import Vue from 'vue'
+import $ from 'jquery'
 
 var img = Vue.directive('img', function(url) {
-
     var img = new Image();
     img.src = url;
 

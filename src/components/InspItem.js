@@ -9,12 +9,12 @@ var Insp = Vue.extend({
         }
     },
 
-    template: '<div class="tile item">' +
+    template: '<div class="tile item inspiration">' +
                     '<a class="overlay" href="{{item.post_url}}" target="_blank">' +
                         '<div class="lay"></div>' +
                         '<div class="blogname">{{item.blog_name}}</div>' +
                     '</a>' +
-                    '<img v-bind:src="getUrl()" alt=""/>' +
+                    '<img v-img="getUrl()" alt=""/>' +
               '</div>',
 
     methods: {

@@ -1,13 +1,12 @@
-/*
 @import "normalize";
 @import "nprogress";
-*/
 
-/*@import "fontstyle";
-@import "globals";*/
+//@import "fontstyle";
+@import "globals";
 @import "salvattore";
 
-$red : "red";
+
+@import "inspiration";
 
 #nprogress .peg {
   box-shadow: none;
