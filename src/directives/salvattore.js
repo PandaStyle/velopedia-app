@@ -39,11 +39,10 @@ var salvattore = Vue.directive('salvattore', {
 
             var imgLoad = imagesLoaded(self.el);
 
-            imgLoad.on( 'progress', function( instance, image ) {
-                //console.log("progress");
-            });
-            imgLoad.on( 'always', function ( instance ) {
+            imgLoad.on( 'progress', function( instance, image ) {});
 
+            imgLoad.on( 'always', function ( instance ) {
+                self.vm.$dispatch('imgloaded-done')
             });
 
         })
