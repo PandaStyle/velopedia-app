@@ -13,6 +13,7 @@ var Insp = Vue.extend({
                     '<a class="overlay" href="{{item.post_url}}" target="_blank">' +
                         '<div class="lay"></div>' +
                         '<div class="blogname">{{item.blog_name}}</div>' +
+                        '<div class="notecount">{{item.note_count}}</div>' +
                     '</a>' +
                     '<img v-img="getUrl()" alt=""/>' +
               '</div>',

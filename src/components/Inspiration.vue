@@ -1,15 +1,16 @@
 <template>
-   <h1>Inspriration</h1>
-    <div class="feed-view grid inspiration" data-columns v-salvattore="items" ></div>
-    <button class="btn primary" @click="loadMore">Load more</button>
+    <div class="feed-view grid inspiration" data-columns v-salvattore="items"></div>
 </template>
 
 
 <script type="text/babel">
+    import Config from "../config"
+
     import $ from 'jquery';
     import jqueryScrollStop from 'jquery-scrollstop';
-    import Config from "../config"
+
     import salvattore from '../directives/salvattore';
+    import NProgress from 'nprogress';
 
     window.ids = [];
 
@@ -50,6 +51,7 @@
             fetchItems (offset, size, func) {
                 this.apiURL = Config.API_URL + "inspiration/" + this.offset + "/" + this.itemsSize;
 
+                NProgress.start();
                 this.$http.get(this.apiURL, function (results, status, request) {
 
                     results.forEach(i => {

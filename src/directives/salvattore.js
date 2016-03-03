@@ -1,9 +1,11 @@
-
 import Vue from 'vue'
 import Salvattore from 'salvattore';
 import _ from 'lodash';
+import NProgress from 'nprogress';
+
 import InspItem from '../components/InspItem.js'
 import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
+
 
 var salvattoreInitialized = false;
 
@@ -35,13 +37,16 @@ var salvattore = Vue.directive('salvattore', {
                 salvattoreInitialized = true;
             }
 
-            Salvattore.appendElements(self.el, fragments)
+            Salvattore.appendElements(self.el, fragments);
 
             var imgLoad = imagesLoaded(self.el);
 
-            imgLoad.on( 'progress', function( instance, image ) {});
+            imgLoad.on( 'progress', function( instance, image ) {
+                NProgress.inc();
+            });
 
             imgLoad.on( 'always', function ( instance ) {
+                NProgress.done();
                 self.vm.$dispatch('imgloaded-done')
             });
 

@@ -1,10 +1,11 @@
 @import "feeditem";
 
 .tile.inspiration{
-  .blogname {
+
+  .blogname, .notecount{
     display: block;
     position: absolute;
-    padding: 30px;
+    padding: 20px;
     text-decoration: none !important;
     color: beige;
     bottom: 0;
@@ -14,7 +15,12 @@
     font-size: 22px;
   }
 
-  &:hover .blogname{
+  .notecount {
+    right: 0;
+  }
+
+  &:hover .blogname,
+  &:hover .notecount {
     opacity: 1;
   }
 
