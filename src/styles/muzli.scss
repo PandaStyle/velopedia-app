@@ -1,0 +1,57 @@
+.muzli {
+  background-color: #fff;
+  display: block;
+  float: left;
+  margin: 10px 20px 10px 0;
+
+  .overlay {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 0;
+  }
+
+  header {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    height: 27%;
+    width: 100%;
+
+
+    .title {
+      top: 15%;
+      text-align: center;
+      font-size: 19px;
+      line-height: 30px;
+      height: 90px;
+      color: #474747;
+      text-shadow: none;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical
+    }
+
+    .meta {
+      position: absolute;
+      bottom: 15%;
+      left: 20px;
+      right: 20px;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #999;
+      width: calc(100% - 40px);
+    }
+  }
+
+
+
+
+}

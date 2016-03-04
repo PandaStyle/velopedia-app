@@ -11,6 +11,7 @@ import App from './components/App.vue'
 import Inspiration from './components/Inspiration.vue'
 import InspItem from './components/InspItem.js'
 import News from './components/News.vue'
+import NewsItem from './components/NewsItem.vue'
 import StravaLogin from './components/StravaLogin.vue'
 import StravaMain from './components/StravaMain.vue'
 

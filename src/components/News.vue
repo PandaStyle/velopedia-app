@@ -1,8 +1,10 @@
 <template>
     <h1>NEWS</h1>
-    <div v-for="item in items">
-        {{item.title}}
-    </div>
+    <news-item
+            class="muzli"
+            v-for="item in items"
+            :item="item">
+    </news-item>
 </template>
 
 
@@ -29,8 +31,7 @@
 
                 this.$http.get(this.apiURL, function (results, status, request) {
 
-                    console.log(results.updatedFeeds.updatedFeed)
-                    transition.next({items: results.updatedFeeds.updatedFeed});
+                    transition.next({items: results.feed});
 
                 }).error(function (data, status, request) {
                     throw (data);
