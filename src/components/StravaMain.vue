@@ -1,16 +1,24 @@
 <template >
    <h1>Strava main</h1>
-   <button class="btn primary" id="getFriendsAct"> Get Friend activity </button>
-    <div>{{items}}</div>
+    <strava-item
+            class="stravaitem"
+            v-for="item in items"
+            :item="item">
+    </strava-item>
 </template>
 
 
 <script type="text/babel">
-    import Config from "../config"
+    import Config from "../config";
+    import StravaItem from "./StravaItem.vue";
 
 
    export default {
         name: 'StravaMain',
+
+        components: {
+           StravaItem
+        },
 
         data () {
             return {

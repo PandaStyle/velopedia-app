@@ -14,6 +14,7 @@ import News from './components/News.vue'
 import NewsItem from './components/NewsItem.vue'
 import StravaLogin from './components/StravaLogin.vue'
 import StravaMain from './components/StravaMain.vue'
+import StravaItem from './components/StravaItem.vue'
 
 
 
@@ -40,3 +41,5 @@ router.map({
 
 
 router.start(App, '#app');
+
+

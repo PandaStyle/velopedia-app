@@ -1,0 +1,91 @@
+@import "../styles/globals.scss";
+
+.stravaitem {
+    position: relative;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+
+   .map-item { height: 200px; width: 200px;}
+
+   .desc {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    color: #fff;
+    display: none;
+  }
+
+   .desc .activity-name {
+    font-size: 22px;
+    margin-top: 5px;
+  }
+
+   .profile-pic {
+    display: inline-block;
+  }
+
+   .staticmap {
+    display: block;
+  }
+
+   .profile-img {
+     display: inline-block;
+    border-radius: 50%;
+    margin: 15px 10px 0 0;
+  }
+
+   .numbers  {
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px 10px 0 0;
+  }
+
+   .distance  {
+    font-size: 2em;
+  }
+
+   .elevation {
+    display: inline-block;
+  }
+
+   .kudos_count {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+   .icon {
+    margin: 0 3px;
+  }
+
+   .icon-mountains{
+    font-size: 18px;
+    vertical-align: middle;
+  }
+
+   .icon-like{
+    font-size: 14px;
+
+  }
+
+  &:hover {
+    background-color: #fc4c02;
+    color: #fff;
+  }
+
+  &:hover img.staticmap {
+    opacity: 0.1;
+  }
+
+  &:hover .desc {
+    display: block;
+  }
+
+}

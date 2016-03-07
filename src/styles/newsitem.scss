@@ -23,6 +23,7 @@
   }
 
   .tile-image {
+
     overflow: hidden;
   }
 
@@ -61,7 +62,7 @@
       font-weight: 900;
       font-size: 24px;
       margin-bottom: 15px;
-      color: #F1F1F1;
+      color: #333;
 
       &:hover {
         //text-decoration: underline;
@@ -169,7 +170,19 @@
   }
 }
 
-.light .tile:hover .summary {
-  @include defaulttransition();
-  color: #444;
+.tile.list {
+  .tile-image {
+    display: inline-block;
+    width: 16%;
+  }
+
+  header {
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.tile.grid {
+  width: 30%;
 }
