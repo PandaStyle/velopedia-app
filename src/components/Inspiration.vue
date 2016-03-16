@@ -12,8 +12,6 @@
     import salvattore from '../directives/salvattore';
     import NProgress from 'nprogress';
 
-    window.ids = [];
-
    export default {
         name: 'Inspiration',
 
@@ -41,6 +39,11 @@
             $(window).on("scrollstop", this.scrollHanlder);
         },
 
+        beforeDestroy () {
+            $(window).off("scrollstart");
+            $(window).off("scrollstop");
+        },
+
         events: {
             "imgloaded-done": function () {
                 this.setColumnHeights();
@@ -53,10 +56,6 @@
 
                 NProgress.start();
                 this.$http.get(this.apiURL, function (results, status, request) {
-
-                    results.forEach(i => {
-                        window.ids.push(i.id);
-                    });
 
                     func(results, status, request)
 

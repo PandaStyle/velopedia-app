@@ -7,7 +7,6 @@ import InspItem from '../components/InspItem.js'
 import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
 
 
-var salvattoreInitialized = false;
 
 var salvattore = Vue.directive('salvattore', {
     update: function (items) {
@@ -32,9 +31,10 @@ var salvattore = Vue.directive('salvattore', {
             if(fragments.length == 0)
                 return;
 
-            if(!salvattoreInitialized){
+
+            //if Salvattore isn't initialized yet
+            if(document.querySelector('.grid').dataset.columns == ""){
                 Salvattore.init();
-                salvattoreInitialized = true;
             }
 
             Salvattore.appendElements(self.el, fragments);

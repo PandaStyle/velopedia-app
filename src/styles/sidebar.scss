@@ -1,0 +1,76 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  background: #34434A;
+
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+
+  .logo {
+    display: inline-block;
+    margin: 40px auto;
+    width:40px;
+    height: 30px;
+    background-image: url("../img/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+  .item {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+
+
+
+    &.content {
+      position: relative;
+      overflow: auto;
+      // We use .flex instead of .flex-grow here because IE10 does
+      // not support flex-grow.
+      flex: auto;
+
+      .menu {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+
+        //display: none;
+        .menu-item {
+          width: 50px;
+          height: 30px;
+          margin: 8px auto;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          &.news {
+            background-image: url('../img/calendar@2x.png');
+          }
+          &.insp {
+            background-image: url('../img/home@2x.png');
+          }
+          &.strava {
+            background-image: url('../img/tumblr@2x.png');
+          }
+        }
+      }
+    }
+
+    &.footer {
+
+    }
+  }
+}

@@ -1,7 +1,18 @@
 <template>
-    <a v-link="{ path: '/inspiration' }">Inspiration</a>
-    <a v-link="{ path: '/news' }">News</a>
-    <a v-link="{ path: '/strava' }">Strava</a>
-    <a v-link="{ path: '/stravalogin' }">Forum</a>
-
+    <div class="sidebar">
+        <div class="logo"></div>
+        <div class="item content">
+            <div class="menu">
+                <a class="menu-item news" v-link="{ path: '/inspiration' }"></a>
+                <a class="menu-item insp" v-link="{ path: '/news' }"></a>
+                <a class="menu-item strava" v-link="{ path: '/strava' }"></a>
+            </div>
+        </div>
+        <div class="item footer"></div>
+    </div>
 </template>
+
+
+<style lang="sass">
+@import "../styles/sidebar.scss";
+</style>
