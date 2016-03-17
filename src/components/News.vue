@@ -1,7 +1,5 @@
 <template>
-    <h1>NEWS</h1>
     <news-item
-            class="muzli"
             v-for="item in items"
             :item="item">
     </news-item>
@@ -9,7 +7,7 @@
 
 
 <script type="text/babel">
-    import Config from "../config"
+    import Config from "config"
     import NewsItem from "./NewsItem.vue"
 
    export default {

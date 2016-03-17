@@ -9,7 +9,7 @@
 
 
 <script type="text/babel">
-    import Config from "../config";
+    import Config from "config";
     import StravaItem from "./StravaItem.vue";
 
 

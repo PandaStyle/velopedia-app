@@ -4,7 +4,7 @@
 
 
 <script type="text/babel">
-    import Config from "../config"
+    import Config from "config"
 
     import $ from 'jquery';
     import jqueryScrollStop from 'jquery-scrollstop';

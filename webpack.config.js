@@ -1,6 +1,7 @@
 var vue = require('vue-loader')
 var webpack = require('webpack')
 var imports = require('imports-loader')
+var path = require('path')
 
 
 module.exports = {
@@ -48,7 +49,8 @@ module.exports = {
     alias: {
       "eventEmitter/EventEmitter": "wolfy87-eventemitter",
       "get-style-property/get-style-property": "desandro-get-style-property",
-      "matches-selector/matches-selector": "desandro-matches-selector/matches-selector"
+      "matches-selector/matches-selector": "desandro-matches-selector/matches-selector",
+      "config": path.join(__dirname, 'config', process.env.NODE_ENV)
     }
   }
 }

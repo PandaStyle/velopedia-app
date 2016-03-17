@@ -26,6 +26,12 @@
 
         props: {
             item: Object
+        },
+
+        methods: {
+            toggleShare: () => {
+                console.log("toggle share");
+            }
         }
     }
 </script>
