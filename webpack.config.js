@@ -3,13 +3,14 @@ var webpack = require('webpack')
 var imports = require('imports-loader')
 var path = require('path')
 
-const PUBLIC_PATH =
+//TODO
+const HOST = process.env == "production" ? "https://velopedia.co/" : "http://localhost:8080/";
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: './static',
-    publicPath: '/static/',
+    publicPath: HOST + 'static/',
     filename: 'build.js'
   },
   module: {
