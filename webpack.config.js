@@ -3,12 +3,13 @@ var webpack = require('webpack')
 var imports = require('imports-loader')
 var path = require('path')
 
+const PUBLIC_PATH =
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: './static',
-    publicPath: 'http://localhost:8080' + '/static/',
+    publicPath: '/static/',
     filename: 'build.js'
   },
   module: {
@@ -70,5 +71,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.OccurenceOrderPlugin()
   ]
 } else {
-  module.exports.devtool = '#source-map'
+  //module.exports.devtool = '#source-map'
 }
