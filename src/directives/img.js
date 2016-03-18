@@ -5,6 +5,9 @@ import Config from "config"
 var img = Vue.directive('img', function(url) {
     var img = new Image();
     img.src = Config.env =="production" ? replaceHttps(url) : url;
+    
+    console.log("img url: ", img.src);
+    
 
     img.onload = function() {
         this.el.src = url;
