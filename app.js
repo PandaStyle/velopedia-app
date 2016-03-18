@@ -1,7 +1,8 @@
+var NewRelic = require('newrelic');
 var Hapi = require('hapi');
 var Inert = require('inert');
 var strava = require('strava-v3');
-var NewRelic = require('newrelic');
+
 
 // Create a server with a host and port
 var server = new Hapi.Server();
