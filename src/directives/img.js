@@ -4,13 +4,16 @@ import Config from "config"
 
 var img = Vue.directive('img', function(url) {
     var img = new Image();
-    img.src = Config.env =="production" ? replaceHttps(url) : url;
+    var newUrl = Config.env =="production" ? replaceHttps(url) : url;
+
+    img.src = newUrl;
     
     console.log("img url: ", img.src);
-    
 
     img.onload = function() {
-        this.el.src = url;
+        this.el.src = newUrl;
+        console.log("img new url: ", newUrl);
+
         $(this.el).addClass("loaded")
     }.bind(this);
 
