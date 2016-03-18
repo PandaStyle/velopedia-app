@@ -3,7 +3,7 @@ var webpack = require('webpack')
 var imports = require('imports-loader')
 var path = require('path')
 
-//TODO: this shouldn't go out to the internet for the request!
+//TODO: this shouldn't go out to the internet for the request
 const HOST = process.env.NODE_ENV === 'production' ? "https://velopedia.co/" : "http://localhost:8080/";
 
 module.exports = {
