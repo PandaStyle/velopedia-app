@@ -3,8 +3,8 @@ var webpack = require('webpack')
 var imports = require('imports-loader')
 var path = require('path')
 
-//TODO
-const HOST = process.env == "production" ? "https://velopedia.co/" : "http://localhost:8080/";
+//TODO: this shouldn't go out to the internet for the request
+const HOST = process.env.NODE_ENV === 'production' ? "https://velopedia.co/" : "http://localhost:8080/";
 
 module.exports = {
   entry: './src/main.js',
