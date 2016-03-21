@@ -4,7 +4,7 @@ import Config from "config"
 
 var img = Vue.directive('img', function(url) {
     var img = new Image();
-    var newUrl = Config.env =="production" ? replaceHttps(url) : url;
+    var newUrl = url;
 
     img.src = newUrl;
     
