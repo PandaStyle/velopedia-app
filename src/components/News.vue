@@ -1,5 +1,6 @@
 <template>
     <news-item
+            class="list"
             v-for="item in items"
             :item="item">
     </news-item>

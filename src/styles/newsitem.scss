@@ -171,18 +171,20 @@
 }
 
 .tile.list {
+  min-height: 0;
+
   .tile-image {
     display: inline-block;
+    min-width: 300px;
     width: 16%;
   }
 
   header {
-    width: 75%;
+    width: 65%;
     display: inline-block;
     vertical-align: top;
+    margin: 0 0 0 15px;
   }
-}
 
-.tile.grid {
-  width: 30%;
+
 }
