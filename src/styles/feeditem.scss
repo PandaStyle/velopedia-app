@@ -1,6 +1,6 @@
 @import "../styles/globals.scss";
 
-.tile {
+.tile.feed{
   @include defaulttransition();
 
   display: block;
