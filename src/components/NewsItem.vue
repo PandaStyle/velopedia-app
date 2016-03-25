@@ -1,5 +1,5 @@
 <template>
-    <div class="tile">
+    <div class="newsitem">
         <a class="overlay" href="{{item.link}}" target="_blank"></a>
         <div class="tile-image"><img v-img="item.image" alt=""/></div>
         <header>

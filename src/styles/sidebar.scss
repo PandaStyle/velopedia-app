@@ -1,23 +1,26 @@
+@import "globals";
+
 .sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 70px;
-  background: #34434A;
+  background: $navbar-color;
 
   display: flex;
   flex-direction: column;
   align-content: flex-start;
 
+  .logo-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: $salomon;
+  }
+
   .logo {
     display: inline-block;
-    margin: 40px auto;
     width:40px;
-    height: 30px;
-    background-image: url("../img/logo.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin: 23px 15px;
   }
 
 

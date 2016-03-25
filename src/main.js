@@ -29,10 +29,12 @@ var router = new Router({
 
 router.map({
   '/inspiration': {
-    component: Inspiration
+    component: Inspiration,
+    name: 'inspiration'
   },
   '/news': {
-    component: News
+    component: News,
+    name: 'news'
   },
   '/strava': {
     component: document.cookie.indexOf("strava_access_token") >= 0 ? StravaMain : StravaLogin

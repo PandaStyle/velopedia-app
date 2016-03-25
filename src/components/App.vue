@@ -1,7 +1,7 @@
 <template >
 
    <navbar></navbar>
-   <div class="container">
+   <div class="container {{this.$route.name}}">
       <router-view></router-view>
    </div>
 </template>
@@ -11,6 +11,7 @@
 
    export default {
       data () {
+        // debugger;
          return {
             view: ""
          }

@@ -1,6 +1,6 @@
 @import "../styles/globals.scss";
 
-.tile {
+.newsitem {
   @include defaulttransition();
 
   display: block;
@@ -172,7 +172,7 @@
   }
 }
 
-.tile.list {
+.newsitem.list {
 
 
   .tile-image {

@@ -1,6 +1,8 @@
 <template>
     <div class="sidebar">
-        <div class="logo"></div>
+        <div class="logo-wrapper">
+            <img src="../img/logo.png" class="logo" />
+        </div>
         <div class="item content">
             <div class="menu">
                 <a class="menu-item news" v-link="{ path: '/inspiration' }"></a>

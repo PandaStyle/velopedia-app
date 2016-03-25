@@ -15,8 +15,15 @@ body{
 }
 
 .container {
-  max-width: 960px;
-  margin: 30px auto;
+
+  &.news {
+    max-width: 960px;
+    margin: 30px auto;
+  }
+
+  &.inspiration {
+    margin: 70px 30px 70px 100px;
+  }
 }
 
 #nprogress .peg {
