@@ -34,7 +34,7 @@
 
     &.content {
       position: relative;
-      overflow: auto;
+      //overflow: auto;
       // We use .flex instead of .flex-grow here because IE10 does
       // not support flex-grow.
       flex: auto;
@@ -52,22 +52,39 @@
 
         //display: none;
         .menu-item {
-          width: 50px;
-          height: 30px;
-          margin: 8px auto;
+          @include defaulttransition();
+
+          position: relative;
+          width: 70px;
+          height: 50px;
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
 
-          &.news {
-            background-image: url('../img/calendar@2x.png');
+          img {
+            padding:10px 20px;
+            width:30px;
+            height:25px;
           }
-          &.insp {
-            background-image: url('../img/home@2x.png');
+
+          .menu-title {
+            position: absolute;
+            top: 0;
+            left: 75px;
+            opacity: 0;
+            color: #444;
           }
-          &.strava {
-            background-image: url('../img/tumblr@2x.png');
+          
+          &:hover {
+            background-color: $salomon;
+            width: 150px;
+
+            .menu-title {
+              transition-delay: .3s;
+              opacity: 1;
+            }
           }
+
         }
       }
     }

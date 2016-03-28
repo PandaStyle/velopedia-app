@@ -2,13 +2,9 @@ import Vue from 'vue'
 import $ from 'jquery'
 import Config from "config"
 
-var a = 0;
-var b = 0;
 
 var img = Vue.directive('img', function(url) {
-    console.log("a ", a++);
-    
-    
+
     var img = new Image();
 
     if(url){
@@ -20,8 +16,6 @@ var img = Vue.directive('img', function(url) {
     img.src = newUrl;
 
     img.onload = function() {
-        console.log("b ", b++);
-
         this.el.src = url;
 
         $(this.el).addClass("loaded")

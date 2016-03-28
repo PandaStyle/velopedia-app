@@ -1,5 +1,5 @@
 <template>
-    <div class="feed-view grid inspiration" data-columns v-salvattore="items"></div>
+    <div class="feed-view grid inspiration" data-columns v-salvattore="items" v-bind:a="currentItemsLength"></div>
 </template>
 
 
@@ -21,9 +21,16 @@
                 offset: 0,
                 itemsSize: 20,
                 salvattoreInitialized: false,
+                currentItemsLength: 0,
 
                 smallestColumnOffset: 0
             }
+        },
+
+        computed: {
+           itemsLength () {
+               return this.items ? this.items.length : 0
+           }
         },
 
         route: {
@@ -52,11 +59,13 @@
 
         methods: {
             fetchItems (offset, size, func) {
+                var self = this;
                 this.apiURL = Config.API_URL + "inspiration/" + this.offset + "/" + this.itemsSize;
 
                 NProgress.start();
-                this.$http.get(this.apiURL, function (results, status, request) {
 
+                this.$http.get(this.apiURL, function (results, status, request) {
+                    self.currentItemsLength = results.length;
                     func(results, status, request)
 
                 }).error(function (data, status, request) {
@@ -71,6 +80,7 @@
                     results.forEach(i => {
                         self.items.push(i);
                     });
+
                 });
             },
 
