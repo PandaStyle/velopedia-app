@@ -34,6 +34,8 @@ var img = Vue.directive('img', function(url) {
             if(a == b){
                 NProgress.done();
             }
+        } else {
+            NProgress.done();
         }
 
     }.bind(this);

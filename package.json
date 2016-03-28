@@ -45,6 +45,7 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+    "cookies-js": "^1.2.2",
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
     "jquery-scrollstop": "^1.2.0",

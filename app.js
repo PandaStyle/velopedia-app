@@ -17,6 +17,8 @@ server.state('strava_access_token', {
     path: "/"
 });
 
+
+
 server.route({
     method: 'GET',
     path: '/{param*}',
