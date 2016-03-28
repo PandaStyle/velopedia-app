@@ -8,10 +8,12 @@
 
 
 <script type="text/babel">
+    import NProgress from 'nprogress';
+
     import Config from "config"
     import NewsItem from "./NewsItem.vue"
 
-   export default {
+    export default {
         name: 'News',
 
         components: {
@@ -26,6 +28,8 @@
 
         route: {
             data (transition) {
+                NProgress.start();
+
                 this.apiURL = Config.API_URL + "news";
 
                 this.$http.get(this.apiURL, function (results, status, request) {
