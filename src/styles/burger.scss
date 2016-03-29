@@ -1,0 +1,88 @@
+@import "globals";
+
+.burger {
+  .con,
+  .special-con {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .bar {
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    margin: 6px 19px;
+  }
+
+  .con {
+    width: auto;
+    margin: 0 auto;
+    @include defaulttransition();
+  }
+
+  .col {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    height: auto;
+    position: relative;
+  }
+
+  .middle {
+    margin: 0 auto;
+  }
+
+  .bar {
+    @include defaulttransition();
+  }
+
+  .con:hover .top {
+    -webkit-transform: translateY(15px) rotateZ(45deg);
+    -moz-transform: translateY(15px) rotateZ(45deg);
+    -ms-transform: translateY(15px) rotateZ(45deg);
+    -o-transform: translateY(15px) rotateZ(45deg);
+    transform: translateY(15px) rotateZ(45deg);
+  }
+
+  .con:hover .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-15px) rotateZ(-45deg);
+  }
+
+  .con:hover .middle {
+    width: 0;
+  }
+
+
+
+  .con:hover .arrow-top-r {
+    -webkit-transform: rotateZ(-45deg) translateY(3px);
+    -moz-transform: rotateZ(-45deg) translateY(3px);
+    -ms-transform: rotateZ(-45deg) translateY(3px);
+    -o-transform: rotateZ(-45deg) translateY(3px);
+    transform: rotateZ(-45deg) translateY(3px);
+    width: 18px;
+  }
+
+  .con:hover .arrow-middle-r {
+    -webkit-transform: translateX(6px);
+    -moz-transform: translateX(6px);
+    -ms-transform: translateX(6px);
+    -o-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+
+  .con:hover .arrow-bottom-r {
+    -webkit-transform: rotateZ(45deg) translateY(-3px);
+    -moz-transform: rotateZ(45deg) translateY(-3px);
+    -ms-transform: rotateZ(45deg) translateY(-3px);
+    -o-transform: rotateZ(45deg) translateY(-3px);
+    transform: rotateZ(45deg) translateY(-3px);
+    width: 18px;
+  }
+
+}

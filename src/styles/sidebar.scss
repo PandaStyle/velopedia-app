@@ -1,4 +1,5 @@
 @import "globals";
+@import "burger";
 
 .sidebar {
   position: fixed;
@@ -22,7 +23,6 @@
     width:40px;
     margin: 23px 15px;
   }
-
 
   .item {
     height: 50px;
@@ -91,6 +91,26 @@
 
     &.footer {
 
+    }
+  }
+
+  menu {
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 0;
+    background-color: #f1f1f1;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+      z-index: 500;
     }
   }
 }

@@ -1,13 +1,17 @@
 <template >
    <div class="menu">
-      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-      <label for="jack">Jack</label>
-      <input type="checkbox" id="john" value="John" v-model="checkedNames">
-      <label for="john">John</label>
-      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-      <label for="mike">Mike</label>
-      <br>
-      <span>Checked names: {{ checkedNames | json }}</span>
+      <input type="checkbox" id="cyclingnews" value="cyclingnews" v-model="checkedNames">
+      <label for="cyclingnews">cyclingnews</label>
+
+      <input type="checkbox" id="cyclingnews" value="cyclingnews" v-model="checkedNames">
+      <label for="cyclingnews">cyclingnews</label>
+
+      <input type="checkbox" id="roadcc" value="roadcc" v-model="checkedNames">
+      <label for="roadcc">roadcc</label>
+
+      <input type="checkbox" id="roadbikeaction" value="roadbikeaction" v-model="checkedNames">
+      <label for="roadbikeaction">cyclingtips</label>
+
    </div>
 </template>
 
