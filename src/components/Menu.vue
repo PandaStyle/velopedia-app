@@ -12,23 +12,33 @@
 </template>
 
 <script type="text/babel">
-   import Cookies from 'cookies-js'
 
-
-
+   function fetchArray(key){
+      if(localStorage.getItem(key)){
+         return JSON.parse(localStorage.getItem(key));
+      }
+      return [];
+   }
+   function saveArray(key, value){
+      localStorage.setItem(key, JSON.stringify(value));
+   }
 
    export default {
       data () {
         // debugger;
          return {
-            checkedNames: Cookies.get('key') ? JSON.parse(Cookies.get('key')) : ["John"]
+            checkedNames: fetchArray("excluded_feeds")
          }
       },
 
       watch: {
          'checkedNames': function (val) {
-            Cookies.set('key', JSON.stringify(val), {domain: '', expires: 600});
+            saveArray("excluded_feeds", val);
          }
+      },
+
+      methods: {
+
       }
    }
 </script>

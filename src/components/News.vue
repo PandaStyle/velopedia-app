@@ -30,9 +30,10 @@
             data (transition) {
                 NProgress.start();
 
-                this.apiURL = Config.API_URL + "news";
+                let apiURL = Config.API_URL + "news";
+                let exludedFeeds = localStorage.getItem('excluded_feeds');
 
-                this.$http.get(this.apiURL, function (results, status, request) {
+                this.$http.post(apiURL, {excluded: exludedFeeds}, function (results, status, request) {
 
                     transition.next({items: results.feed});
 
