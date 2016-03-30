@@ -1,6 +1,4 @@
 <template >
-
-   <menu></menu>
    <navbar></navbar>
    <div class="container {{this.$route.name}}">
       <router-view></router-view>
@@ -9,7 +7,6 @@
 
 <script type="text/babel">
    import Navbar from './Navbar.vue';
-   import Menu from './Menu.vue';
 
    export default {
       data () {
@@ -19,8 +16,7 @@
          }
       },
       components: {
-         Navbar,
-         Menu
+         Navbar
       }
    }
 </script>

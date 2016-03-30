@@ -1,0 +1,119 @@
+@import "globals";
+
+menu {
+  @include defaulttransition();
+
+  font-family: 'Futura', sans-serif;
+
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 0;
+  background-color: #F1F1F1;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    z-index: 500;
+  }
+
+  ul {
+    width: 300px;
+    position: relative;
+    top: 20%;
+    float: left;
+
+    &.border {
+      border-right: 1px solid $light-grey;
+    }
+
+    li {
+      font-size: 3.8rem;
+      vertical-align: baseline;
+      list-style: none;
+
+      a {
+        color: $grey;
+        text-decoration: none;
+
+        &:hover {
+          color: $dark-grey;
+        }
+      }
+
+
+      .bordered {
+        @include defaulttransition();
+        position: relative;
+
+        &:after {
+          height: 3px;
+          width: 0;
+          display: block;
+          background: #17191c;
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+        }
+
+        &:hover:after {
+          @include defaulttransition();
+          width: 100%;
+          background: $dark-grey;
+        }
+
+        &.active:after {
+          width: 100%;
+          background: $dark-grey;
+        }
+        &.active {
+          color: $dark-grey;
+        }
+
+      }
+
+      .suggest {
+        background: none;
+        border: none;
+        border-radius: 100%;
+        outline: 0;
+        border: 0;
+
+        &:focus, &:active {
+          background: none;
+          border: none;
+        }
+      }
+
+    }
+
+    li.layout {
+      .layout-selector {
+        position: relative;
+        margin-left: 250px;
+      }
+    }
+
+  }
+
+  .menucontent {
+    float: left;
+    position: relative;
+    top: 20%;
+    padding: 0 0 0 80px;
+    display: inline-block;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2rem;
+      color: $dark-grey;
+    }
+  }
+}

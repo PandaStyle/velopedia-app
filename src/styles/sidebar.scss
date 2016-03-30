@@ -74,7 +74,7 @@
             opacity: 0;
             color: #444;
           }
-          
+
           &:hover {
             background-color: $salomon;
             width: 150px;
@@ -94,23 +94,5 @@
     }
   }
 
-  menu {
-    margin: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    z-index: 0;
-    background-color: #f1f1f1;
 
-    &.open {
-      visibility: visible;
-      opacity: 1;
-      z-index: 500;
-    }
-  }
 }

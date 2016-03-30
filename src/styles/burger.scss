@@ -1,6 +1,8 @@
 @import "globals";
 
 .burger {
+  z-index: 1000;
+
   .con,
   .special-con {
     cursor: pointer;
@@ -84,5 +86,12 @@
     transform: rotateZ(45deg) translateY(-3px);
     width: 18px;
   }
+
+  &.active {
+    .bar{
+      background: $salomon;
+    }
+  }
+
 
 }

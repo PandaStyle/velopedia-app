@@ -1,18 +1,7 @@
 <template>
     <div class="sidebar">
-        <menu v-bind:class="{open: isMenuActive}">
-            <ul class="menu-list">
-                <li>
-                    <a data-menuview="MenuSettings" class="bordered" href="#">Settings</a>
-                </li>
-                <li>
-                    <a data-menuview="MenuAbout" class="bordered" href="#">About</a>
-                </li>
-                <li>
-                    <a data-menuview="MenuContact" class="bordered" href="#">Contact</a>
-                </li>
-            </ul>
-        </menu>
+        <menu-container v-bind:active="isMenuActive"></menu-container>
+
         <div class="logo-wrapper">
             <img src="../img/logo.png" class="logo" />
         </div>
@@ -29,7 +18,7 @@
 
             </div>
         </div>
-        <div class="burger" @click="toggleMenu">
+        <div class="burger" v-bind:class="{'active' : isMenuActive }" @click="toggleMenu">
             <div class="col">
                 <div class="con">
                     <div class="bar arrow-top-r"></div>
@@ -42,13 +31,20 @@
 </template>
 
 <script type="text/babel">
+    import $ from 'jquery';
+    import MenuContainer from './MenuContainer.vue';
+
+
     export default {
         name: 'Navbar',
 
+        components: {
+            MenuContainer
+        },
+
         data () {
             return {
-                isMenuActive: false,
-                activeMenuView: ""
+                isMenuActive: false
             }
         },
 
