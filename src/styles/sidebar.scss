@@ -60,6 +60,7 @@
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
+          text-decoration: none;
 
           img {
             padding:10px 20px;
@@ -68,11 +69,13 @@
           }
 
           .menu-title {
+            font-family: "Futura", sans-serif;
             position: absolute;
             top: 0;
             left: 75px;
             opacity: 0;
             color: #444;
+            font-size: 20px;
           }
 
           &:hover {
@@ -83,6 +86,21 @@
               transition-delay: .3s;
               opacity: 1;
             }
+
+            .menu-icon {
+              color: $navbar-color;
+            }
+          }
+
+          .menu-icon {
+            color: #fff;
+            float: left;
+            padding: 10px 20px;
+            font-size: 30px;
+          }
+
+          &.insp:hover {
+            width: 190px;
           }
 
         }

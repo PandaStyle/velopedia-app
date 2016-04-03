@@ -8,11 +8,11 @@
         <div class="item content">
             <div class="menu">
                 <a class="menu-item news" v-link="{ path: '/news' }">
-                    <img src="../img/calendar@2x.png" alt="">
+                    <div class="menu-icon icon-news"></div>
                     <span class="menu-title">News</span>
                 </a>
                 <a class="menu-item insp" v-link="{ path: '/inspiration' }">
-                    <img src="../img/tumblr@2x.png" alt="">
+                  <span class="menu-icon icon-image"></span>
                     <span class="menu-title">Inspiration</span>
                 </a>
 

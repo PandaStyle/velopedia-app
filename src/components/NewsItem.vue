@@ -8,10 +8,11 @@
             <div class=meta>
                 <a class="host" href="{{item.link}}">{{item.feed}}</a>
                 <span class="diff">{{item.diff}} ago</span>
-                <span class="share general icon-share" v-bind:class="{active: isShareActive}" @click="toggleShare"></span>
-                <a href="https://twitter.com/intent/tweet?original_referer=http://curatist.co&text={{item.title}}&tw_p=tweetbutton&url={{item.link}}&via=The_Curatist" class="share twitter icon-twitter-with-circle" v-show="isShareActive"></a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{item.link}}" class="popup share facebook icon-facebook-with-circle" v-show="isShareActive"></a>
-                <a href="http://www.linkedin.com/shareArticle?mini=true&url={{item.link}}&title={{item.title}}&summary={{item.summary}}&source={{item.feed}}" class="share linkedin icon-linkedin-with-circle" v-show="isShareActive"></a>
+                <span class="share general" v-bind:class="[isShareActive ? 'icon-cross' : 'icon-share-alternitive']" @click="toggleShare"></span>
+                <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://curatist.co&text={{item.title}}&tw_p=tweetbutton&url={{item.link}}&via=Velopedia" class="share twitter icon-twitter" v-show="isShareActive"></a>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{item.link}}&t={{item.title}}" class="popup share facebook icon-facebook" v-show="isShareActive"></a>
+                <a target="_blank" href="https://getpocket.com/save?url={{item.link}}" class="share pocket icon-get-pocket" v-show="isShareActive"></a>
+                <a target="_blank" href="mailto:?Subject=From Velopedia: {{item.title}}&Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{item.link}}" class="share linkedin icon-paper-plane" v-show="isShareActive"></a>
             </div>
         </header>
     </div>
@@ -28,9 +29,15 @@
             item: Object
         },
 
+        data () {
+            return {
+                isShareActive: false
+            }
+        },
+
         methods: {
-            toggleShare: () => {
-                console.log("toggle share");
+            toggleShare () {
+                this.isShareActive = !this.isShareActive;
             }
         }
     }

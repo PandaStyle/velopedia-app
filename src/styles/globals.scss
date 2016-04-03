@@ -8,7 +8,7 @@ $summary-color: #737373;
 
 $facebook-color: #3b5998;
 $twitter-color: #4099FF;
-$linkedin-color: #0077B5;
+$pocket-color: #ef4056;
 
 $border-radius : 1px;
 $overlay-hover-color: rgba(0,0,0,.75);
@@ -29,6 +29,14 @@ img {
   -ms-transition: all .2s ease-out;
   -o-transition: all .2s ease-out;
   transition: all .2s ease-out;
+}
+
+@mixin specTransition($values...) {
+  -webkit-transition: $values .2s ease-out;
+  -moz-transition: $values .2s ease-out;
+  -ms-transition: $values .2s ease-out;
+  -o-transition: $values .2s ease-out;
+  transition: $values .2s ease-out;
 }
 
 .disable-hover {
