@@ -2,6 +2,7 @@
 @import "burger";
 
 .sidebar {
+  z-index: 10;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -65,45 +66,62 @@
         .menu-item {
           @include defaulttransition();
 
-          position: relative;
           width: 70px;
-          height: 50px;
+          text-decoration: none;
+          position: relative;
+
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
 
-          img {
-            padding:10px 20px;
-            width:30px;
-            height:25px;
+          .menu-icon {
+            float: left;
+            color: $salomon;
+            font-size: 30px;
+            padding: 20px;
           }
 
           .menu-title {
+            text-transform: uppercase;
+            font-family: "Futura", sans-serif;
+            font-size: 18px;
+            font-weight: bold;
             position: absolute;
-            top: 0;
-            left: 75px;
+            top: 10px;
+            left: 0;
             opacity: 0;
             color: #444;
           }
 
           &:hover {
+            @include defaulttransition();
             background-color: $salomon;
             width: 150px;
 
             .menu-title {
-              transition-delay: .3s;
+              transition-delay: .2s;
               opacity: 1;
+              left: 80px;
+            }
+
+            .menu-icon {
+              color: white;
             }
           }
 
+          &.insp:hover {
+            width:220px;
+          }
         }
       }
     }
 
-    &.footer {
-
-    }
   }
+
+  &.active {
+    min-width: 700px;
+  }
+
 
 
 }

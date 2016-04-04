@@ -2,10 +2,10 @@
    <div class="menu-container">
       <ul class="menu-list" v-bind:class="{border: activeMenuView}">
          <li>
-            <a data-menuview="MenuFeeds" v-bind:class="{active: activeMenuView=='MenuFeeds'}" href="#" @click="toggleMenuView">Feeds</a>
+            <a data-menuview="MenuFeeds" v-bind:class="{active: activeMenuView=='MenuFeeds'}"  @click="toggleMenuView">Feeds</a>
          </li>
          <li>
-            <a data-menuview="MenuAbout" v-bind:class="{active: activeMenuView=='MenuAbout'}" href="#" @click="toggleMenuView">About</a>
+            <a data-menuview="MenuAbout" v-bind:class="{active: activeMenuView=='MenuAbout'}" @click="toggleMenuView">About</a>
          </li>
       </ul>
       <div class="menucontent">

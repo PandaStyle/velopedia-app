@@ -16,7 +16,5 @@
 </script>
 
 <style lang="sass">
-    a {
-        color: #DC8A8A;
-    }
+
 </style>

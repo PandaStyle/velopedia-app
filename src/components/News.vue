@@ -9,9 +9,12 @@
 
 <script type="text/babel">
     import NProgress from 'nprogress';
+    import _ from "lodash";
 
-    import Config from "config"
-    import NewsItem from "./NewsItem.vue"
+    import Config from "config";
+    import NewsItem from "./NewsItem.vue";
+
+    import Feeds from "../const/feeds";
 
     export default {
         name: 'News',
@@ -28,12 +31,16 @@
 
         route: {
             data (transition) {
+              
+              
                 NProgress.start();
 
                 let apiURL = Config.API_URL + "news";
-                let exludedFeeds = localStorage.getItem('excluded_feeds');
+                console.log(Feeds.length);
+                
+                let exludedFeeds = _.difference(Feeds, JSON.parse(localStorage.getItem('feeds')));
 
-                this.$http.post(apiURL, {excluded: exludedFeeds}, function (results, status, request) {
+                this.$http.post(apiURL, {excluded: JSON.stringify(exludedFeeds) }, function (results, status, request) {
 
                     transition.next({items: results.feed});
 
