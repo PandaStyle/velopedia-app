@@ -1,4 +1,4 @@
-
+@import "globals";
 
 /* Make clicks pass-through */
 #nprogress {
@@ -6,7 +6,7 @@
 }
 
 #nprogress .bar {
-  background: #DC8A8A;
+  background: $salomon;
 
   position: fixed;
   z-index: 1031;

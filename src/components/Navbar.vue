@@ -1,6 +1,6 @@
 <template>
-    <div class="sidebar">
-        <menu-container v-bind:active="isMenuActive"></menu-container>
+    <div class="sidebar" v-bind:class="{'active' : isMenuActive }">
+        <!--<menu-container v-bind:active="isMenuActive"></menu-container>-->
 
         <div class="logo-wrapper" v-bind:class="{'active' : isMenuActive }">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
@@ -11,16 +11,19 @@
             </svg>
         </div>
         <div class="item content">
-            <div class="menu">
+            <div class="menu" v-show="!isMenuActive">
                 <a class="menu-item news" v-link="{ path: '/news' }">
-                    <img src="../img/calendar@2x.png" alt="">
+                    <div class="menu-icon icon-news"></div>
                     <span class="menu-title">News</span>
                 </a>
                 <a class="menu-item insp" v-link="{ path: '/inspiration' }">
-                    <img src="../img/tumblr@2x.png" alt="">
+                  <span class="menu-icon icon-image"></span>
                     <span class="menu-title">Inspiration</span>
                 </a>
+            </div>
 
+            <div class="menu" v-show="isMenuActive">
+                <menu-container v-bind:active="isMenuActive"></menu-container>
             </div>
         </div>
         <div class="burger" v-bind:class="{'active' : isMenuActive }" @click="toggleMenu">
@@ -56,6 +59,10 @@
         methods: {
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
+                if(!this.isMenuActive) {
+                    this.$broadcast('menuClosed')
+                }
+
             }
         }
     }
