@@ -25,7 +25,6 @@
 
   .col {
     display: inline-block;
-    width: 24%;
     text-align: center;
     height: auto;
     position: relative;
@@ -59,38 +58,43 @@
     width: 0;
   }
 
-
-
-  .con:hover .arrow-top-r {
-    -webkit-transform: rotateZ(-45deg) translateY(3px);
-    -moz-transform: rotateZ(-45deg) translateY(3px);
-    -ms-transform: rotateZ(-45deg) translateY(3px);
-    -o-transform: rotateZ(-45deg) translateY(3px);
-    transform: rotateZ(-45deg) translateY(3px);
-    width: 18px;
-  }
-
-  .con:hover .arrow-middle-r {
-    -webkit-transform: translateX(6px);
-    -moz-transform: translateX(6px);
-    -ms-transform: translateX(6px);
-    -o-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-
-  .con:hover .arrow-bottom-r {
-    -webkit-transform: rotateZ(45deg) translateY(-3px);
-    -moz-transform: rotateZ(45deg) translateY(-3px);
-    -ms-transform: rotateZ(45deg) translateY(-3px);
-    -o-transform: rotateZ(45deg) translateY(-3px);
-    transform: rotateZ(45deg) translateY(-3px);
-    width: 18px;
+  &:hover {
+    .bar{
+      background: $salomon;
+    }
   }
 
   &.active {
     .bar{
       background: $salomon;
     }
+
+    .con .arrow-top-r {
+      -webkit-transform: rotateZ(-45deg) translateY(3px);
+      -moz-transform: rotateZ(-45deg) translateY(3px);
+      -ms-transform: rotateZ(-45deg) translateY(3px);
+      -o-transform: rotateZ(-45deg) translateY(3px);
+      transform: rotateZ(-45deg) translateY(3px);
+      width: 18px;
+    }
+
+    .con .arrow-middle-r {
+      -webkit-transform: translateX(6px);
+      -moz-transform: translateX(6px);
+      -ms-transform: translateX(6px);
+      -o-transform: translateX(6px);
+      transform: translateX(6px);
+    }
+
+    .con .arrow-bottom-r {
+      -webkit-transform: rotateZ(45deg) translateY(-3px);
+      -moz-transform: rotateZ(45deg) translateY(-3px);
+      -ms-transform: rotateZ(45deg) translateY(-3px);
+      -o-transform: rotateZ(45deg) translateY(-3px);
+      transform: rotateZ(45deg) translateY(-3px);
+      width: 18px;
+    }
+
   }
 
 

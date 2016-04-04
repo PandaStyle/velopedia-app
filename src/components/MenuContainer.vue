@@ -1,14 +1,11 @@
 <template >
-   <menu v-bind:class="{open: active}">
+   <div class="menu-container">
       <ul class="menu-list" v-bind:class="{border: activeMenuView}">
          <li>
-            <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
+            <a data-menuview="MenuFeeds" v-bind:class="{active: activeMenuView=='MenuFeeds'}" href="#" @click="toggleMenuView">Feeds</a>
          </li>
          <li>
-            <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}" href="#" @click="toggleMenuView">Settings</a>
-         </li>
-         <li>
-            <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" href="#" @click="toggleMenuView">Thoughts?</a>
+            <a data-menuview="MenuAbout" v-bind:class="{active: activeMenuView=='MenuAbout'}" href="#" @click="toggleMenuView">About</a>
          </li>
       </ul>
       <div class="menucontent">
@@ -16,29 +13,12 @@
             <!-- component changes when vm.currentview changes! -->
          </component>
       </div>
-   </menu>
-<!--
-
-   <div class="menu">
-      <input type="checkbox" id="cyclingnews" value="cyclingnews" v-model="checkedNames">
-      <label for="cyclingnews">cyclingnews</label>
-
-      <input type="checkbox" id="cyclingnews" value="cyclingnews" v-model="checkedNames">
-      <label for="cyclingnews">cyclingnews</label>
-
-      <input type="checkbox" id="roadcc" value="roadcc" v-model="checkedNames">
-      <label for="roadcc">roadcc</label>
-
-      <input type="checkbox" id="roadbikeaction" value="roadbikeaction" v-model="checkedNames">
-      <label for="roadbikeaction">cyclingtips</label>
-
-   </div>-->
+   </div>
 </template>
 
 <script type="text/babel">
-   import MenuWhat from './MenuWhat.vue';
-   import MenuFeedback from './MenuFeedback.vue';
-   import MenuSettings from './MenuSettings.vue';
+   import MenuAbout from './MenuAbout.vue';
+   import MenuFeeds from './MenuFeeds.vue';
 
 
    function fetchArray(key){
@@ -55,9 +35,8 @@
       name: 'MenuContainer',
 
       components: {
-         MenuWhat,
-         MenuFeedback,
-         MenuSettings
+         MenuFeeds,
+         MenuAbout
       },
 
       props: {
@@ -67,6 +46,7 @@
       data () {
         // debugger;
          return {
+            activeMenuView: null,
             checkedNames: fetchArray("excluded_feeds")
          }
       },
@@ -81,7 +61,6 @@
       },
 
        ready () {
-           console.log("reqady")
            console.log(this.hello);
        },
 
@@ -89,6 +68,12 @@
           toggleMenuView (a) {
               this.activeMenuView = a.currentTarget.attributes[0].value;
           }
+      },
+
+      events: {
+         'menuClosed' () {
+            this.activeMenuView = null;
+         }
       }
    }
 </script>

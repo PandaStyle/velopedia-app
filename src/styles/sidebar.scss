@@ -2,6 +2,7 @@
 @import "burger";
 
 .sidebar {
+  z-index: 10;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -112,5 +113,17 @@
     }
   }
 
+
+  &.active {
+    width: 700px;
+
+    .logo-wrapper {
+      background-color: $navbar-color;
+    }
+  }
+
+  &.full {
+    width: 100% !important;
+  }
 
 }

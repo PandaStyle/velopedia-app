@@ -4,6 +4,7 @@
 .newsitem {
   @include defaulttransition();
 
+  z-index: 1;
   display: block;
   position: relative;
   min-width: 100px;
