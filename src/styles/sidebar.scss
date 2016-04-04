@@ -2,6 +2,7 @@
 @import "burger";
 
 .sidebar {
+  z-index: 1;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,16 +14,28 @@
   align-content: flex-start;
 
   .logo-wrapper {
+    z-index: 1000;
     width: 70px;
     height: 70px;
     background-color: $salomon;
+
+    svg {
+      width: 50px;
+      margin: 10px;
+
+      .path {
+        fill: $white;
+      }
+    }
   }
 
-  .logo {
-    display: inline-block;
-    width:40px;
-    margin: 23px 15px;
+  .logo-wrapper.active {
+    background-color: transparent;
+    svg .path {
+      fill: $salomon;
+    }
   }
+
 
   .item {
     height: 50px;
