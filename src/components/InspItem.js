@@ -9,7 +9,7 @@ var Insp = Vue.extend({
         }
     },
 
-    template: '<div class="tile inspiration">' +
+    template: '<div class="tile inspiration" data-tumblrid="{{item.id}}" data-tumblrreblogkey="{{item.reblog_key}}">' +
                     '<a class="overlay" href="{{item.post_url}}" target="_blank">' +
                         '<div class="lay"></div>' +
                         '<div class="blogname">{{item.blog_name}}</div>' +

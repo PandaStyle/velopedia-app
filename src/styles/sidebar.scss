@@ -76,18 +76,18 @@
 
           .menu-icon {
             float: left;
-            color: $salomon;
+            color: white;
             font-size: 30px;
-            padding: 20px;
+            padding: 10px 20px;
           }
 
           .menu-title {
-            text-transform: uppercase;
+            //text-transform: uppercase;
             font-family: "Futura", sans-serif;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 22px;
+            //font-weight: bold;
             position: absolute;
-            top: 10px;
+            //top: 10px;
             left: 0;
             opacity: 0;
             color: #444;
@@ -110,7 +110,7 @@
           }
 
           &.insp:hover {
-            width:220px;
+            width:200px;
           }
         }
       }

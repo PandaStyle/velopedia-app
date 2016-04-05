@@ -11,6 +11,7 @@
 
     import salvattore from '../directives/salvattore';
     import NProgress from 'nprogress';
+    import _ from 'lodash';
 
    export default {
         name: 'Inspiration',
@@ -23,7 +24,8 @@
                 salvattoreInitialized: false,
                 currentItemsLength: 0,
 
-                smallestColumnOffset: 0
+                smallestColumnOffset: 0,
+                reblogKeys: []
             }
         },
 
@@ -66,6 +68,32 @@
 
                 this.$http.get(this.apiURL, function (results, status, request) {
                     self.currentItemsLength = results.length;
+
+
+                    //check for duplicates
+                    results.forEach( i => {
+                        this.reblogKeys.forEach( j => {
+                            //we have a duplicate
+                            if(j.reblog_key == i.reblog_key && j.id != i.id) {
+                                i["duplicate"] = true;
+                            }
+                        });
+                        this.reblogKeys.push({
+                            reblog_key: i.reblog_key,
+                            id: i.id
+                        })
+                    });
+
+                    _.remove(results, function (i) {
+                        return !!i["duplicate"];
+                    });
+
+                    this.assertDuplicates();
+
+                    console.log(this.reblogKeys.length);
+                    //console.log(_.uniqWith(this.reblogKeys, _.isEqual).length);
+
+                    
                     func(results, status, request)
 
                 }).error(function (data, status, request) {
@@ -101,6 +129,11 @@
                     console.log("call fetch");
                     this.loadMore();
                 };
+            },
+
+            assertDuplicates () {
+                if(_.uniq(this.reblogKeys).length !== this.reblogKeys.length)
+                        console.log("Duplicates found");
             }
         }
     }
