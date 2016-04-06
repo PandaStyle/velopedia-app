@@ -91,7 +91,7 @@
                     this.assertDuplicates();
 
                     console.log(this.reblogKeys.length);
-                    //console.log(_.uniqWith(this.reblogKeys, _.isEqual).length);
+                    console.log(_.uniqWith(this.reblogKeys, _.isEqual).length);
 
                     
                     func(results, status, request)

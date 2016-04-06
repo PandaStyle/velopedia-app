@@ -17,7 +17,6 @@ import StravaMain from './components/StravaMain.vue'
 import StravaItem from './components/StravaItem.vue'
 
 
-
 Vue.use(Router);
 Vue.use(VueResource);
 
