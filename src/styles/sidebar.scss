@@ -118,11 +118,29 @@
 
   }
 
+  .blackLayer {
+    @include specTransition(opacity);
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   &.open {
     min-width: 300px;
 
     &.wide {
       min-width: 700px;
+    }
+
+    .blackLayer {
+      pointer-events: all;
+      opacity: .5;
     }
   }
 

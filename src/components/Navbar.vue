@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar" v-bind:class="{'open': isMenuOpen, 'wide': isMenuWide }">
-
+        <div class="blackLayer"></div>
         <div class="logo-wrapper" v-bind:class="{'active' : isMenuOpen }">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
                 <path class="path" fill="#000000" d="M15.905,53.072C14.659,51.472-9.046,63.575,3.808,68.761c7.186,2.898,15.345,3.744,23.029,3.699  c3.13-0.018,31.017-2.834,30.357-6.475C56.831,63.98,41,62.73,39.222,62.392C31.87,60.988,20.863,59.435,15.905,53.072  C14.708,51.535,23.965,63.413,15.905,53.072z"></path><g>
