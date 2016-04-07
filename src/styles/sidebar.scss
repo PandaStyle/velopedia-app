@@ -77,8 +77,8 @@
           .menu-icon {
             float: left;
             color: white;
-            font-size: 30px;
-            padding: 10px 20px;
+            font-size: 36px;
+            padding: 10px 17px;
           }
 
           .menu-title {
@@ -118,10 +118,13 @@
 
   }
 
-  &.active {
-    min-width: 700px;
-  }
+  &.open {
+    min-width: 300px;
 
+    &.wide {
+      min-width: 700px;
+    }
+  }
 
 
 }

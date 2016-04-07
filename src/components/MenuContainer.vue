@@ -17,6 +17,8 @@
 </template>
 
 <script type="text/babel">
+   import store from '../store';
+
    import MenuAbout from './MenuAbout.vue';
    import MenuFeeds from './MenuFeeds.vue';
 
@@ -43,8 +45,13 @@
           active: Boolean
       },
 
+      computed: {
+         isMenuWide () {
+            return store.state.isMenuWide
+         }
+      },
+
       data () {
-        // debugger;
          return {
             activeMenuView: null,
             checkedNames: fetchArray("excluded_feeds")
@@ -55,25 +62,19 @@
          'checkedNames': function (val) {
             saveArray("excluded_feeds", val);
          },
-         'hello': (val) => {
-             console.log("watch", val)
+         'isMenuWide': function(val){
+            if(!val)
+               this.activeMenuView = null
          }
       },
-
-       ready () {
-           console.log(this.hello);
-       },
 
       methods: {
           toggleMenuView (a) {
-              this.activeMenuView = a.currentTarget.attributes[0].value;
-          }
-      },
+             if(!this.isMenuWide)
+                store.dispatch('TOGGLE_MENU_WIDE')
 
-      events: {
-         'menuClosed' () {
-            this.activeMenuView = null;
-         }
+             this.activeMenuView = a.currentTarget.attributes[0].value
+          }
       }
    }
 </script>

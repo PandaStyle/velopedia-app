@@ -1,8 +1,7 @@
 <template>
-    <div class="sidebar" v-bind:class="{'active' : isMenuActive }">
-        <!--<menu-container v-bind:active="isMenuActive"></menu-container>-->
+    <div class="sidebar" v-bind:class="{'open': isMenuOpen, 'wide': isMenuWide }">
 
-        <div class="logo-wrapper" v-bind:class="{'active' : isMenuActive }">
+        <div class="logo-wrapper" v-bind:class="{'active' : isMenuOpen }">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
                 <path class="path" fill="#000000" d="M15.905,53.072C14.659,51.472-9.046,63.575,3.808,68.761c7.186,2.898,15.345,3.744,23.029,3.699  c3.13-0.018,31.017-2.834,30.357-6.475C56.831,63.98,41,62.73,39.222,62.392C31.87,60.988,20.863,59.435,15.905,53.072  C14.708,51.535,23.965,63.413,15.905,53.072z"></path><g>
                 <path class="path" fill="#000000" d="M99.373,48.383c-2.322-10.907-10.5-19.772-20.076-25.074c-0.52-0.375-1.257-0.816-2.257-1.33   c-10.304,0.598-20.602,2.008-29.529,7.757c-10.757,6.929-11.552,20.535-20.649,28.695c11.723,4.021,24.539,2.741,35.929,8.409   c6.224,3.097,22.738,17.556,27.624,6.25c1.774-4.101,6.134-5.111,7.858-9.519C100.172,58.727,100.451,53.453,99.373,48.383z"></path>
@@ -11,7 +10,7 @@
             </svg>
         </div>
         <div class="item content">
-            <div class="menu" v-show="!isMenuActive">
+            <div class="menu" v-show="!isMenuOpen">
                 <a class="menu-item news" v-link="{ path: '/news' }">
                     <div class="menu-icon icon-news"></div>
                     <span class="menu-title">News</span>
@@ -22,11 +21,11 @@
                 </a>
             </div>
 
-            <div class="menu" v-show="isMenuActive">
-                <menu-container v-bind:active="isMenuActive"></menu-container>
+            <div class="menu" v-show="isMenuOpen">
+                <menu-container v-bind:active="isMenuOpen"></menu-container>
             </div>
         </div>
-        <div class="burger" v-bind:class="{'active' : isMenuActive }" @click="toggleMenu">
+        <div class="burger" v-bind:class="{'active' : isMenuOpen }" @click="toggleMenu">
             <div class="col">
                 <div class="con">
                     <div class="bar arrow-top-r"></div>
@@ -39,7 +38,7 @@
 </template>
 
 <script type="text/babel">
-    import $ from 'jquery';
+    import store from '../store';
     import MenuContainer from './MenuContainer.vue';
 
 
@@ -50,19 +49,19 @@
             MenuContainer
         },
 
-        data () {
-            return {
-                isMenuActive: false
+        computed: {
+            isMenuOpen () {
+                return store.state.isMenuOpen
+            },
+
+            isMenuWide () {
+                return store.state.isMenuWide
             }
         },
 
         methods: {
             toggleMenu () {
-                this.isMenuActive = !this.isMenuActive;
-                if(!this.isMenuActive) {
-                    this.$broadcast('menuClosed')
-                }
-
+                store.dispatch('TOGGLE_MENU')
             }
         }
     }
