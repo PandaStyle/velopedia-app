@@ -118,7 +118,7 @@
 
   }
 
-  .blackLayer {
+  & + .blackLayer {
     @include specTransition(opacity);
     background-color: #000;
     position: fixed;
@@ -126,8 +126,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
     opacity: 0;
+    z-index: 2;
     pointer-events: none;
   }
 
@@ -138,7 +138,7 @@
       min-width: 700px;
     }
 
-    .blackLayer {
+    & + .blackLayer {
       pointer-events: all;
       opacity: .5;
     }
