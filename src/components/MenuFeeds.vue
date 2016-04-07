@@ -47,11 +47,6 @@
                 <a class="link roadbikeaction" href="http://www.roadbikeaction.com">Roadbikeaction</a>
             </li>
             <li>
-                <input class="sw" type="checkbox" id="sbs" value="sbs" v-model="checkedNames">
-                <label for="sbs"></label>
-                <a class="link sbs" href="http://www.sbs.com.au/">SBS Cycling</a>
-            </li>
-            <li>
                 <input class="sw" type="checkbox" id="theinnerring" value="theinnerring" v-model="checkedNames">
                 <label for="theinnerring"></label>
                 <a class="link theinnerring" href="http://inrng.com">The Inner Ring</a>

@@ -8,7 +8,6 @@ export default [
     "pezcycling",
     "roadcc",
     "roadbikeaction",
-    "sbs",
     "theinnerring",
     "velonews"
 ];
