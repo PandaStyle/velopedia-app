@@ -22,7 +22,7 @@
             </div>
 
             <div class="menu" v-show="isMenuOpen">
-                <menu-container v-bind:active="isMenuOpen"></menu-container>
+                <menu-container v-bind:active="isMenuOpen" ></menu-container>
             </div>
         </div>
         <div class="burger" v-bind:class="{'active' : isMenuOpen }" @click="toggleMenu">

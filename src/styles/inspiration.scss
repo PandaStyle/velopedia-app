@@ -1,3 +1,5 @@
+@import "globals";
+
 .tile.inspiration{
 
   @include defaulttransition();
@@ -14,10 +16,14 @@
   }
 
   a.overlay {
+    @include defaulttransition();
     z-index: 10;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 50px;
+    bottom: -30px;
+    opacity: 0;
+    background-color: $sidebar-grey;
   }
 
   .tile-image {
@@ -66,13 +72,12 @@
   .blogname, .notecount{
     display: block;
     position: absolute;
-    padding: 20px;
+    padding: 8px 10px;
     text-decoration: none !important;
-    color: beige;
-    bottom: 0;
+    color: white;
     opacity: 0;
     z-index: 1;
-    font-weight: bold;
+    font-family: "Futura", sans-serif;
     font-size: 22px;
   }
 
@@ -80,21 +85,21 @@
     right: 0;
   }
 
-  &:hover .blogname,
-  &:hover .notecount {
-    opacity: 1;
-  }
-
-  &:hover{
-    &:after {
-      content: "";
-      background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 50%;
-      top: 50%;
+  &:hover {
+    .overlay {
       opacity: 1;
+      bottom: 0;
+
+    }
+
+    .blogname,
+    .notecount {
+      @include defaulttransition();
+      opacity: 1;
+      transition-delay: .2s;
     }
   }
+
+
+
 }

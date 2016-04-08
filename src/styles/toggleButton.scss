@@ -1,5 +1,7 @@
-$sw-height: 30px;
-$sw-width: 51px;
+@import "globals";
+
+$sw-height: 20px;
+$sw-width: 40px;
 
 input{
   &.sw{
@@ -31,9 +33,9 @@ input{
         content: "";
         position: absolute;
         display: block;
-        height: 28px;
-        width: 28px;
-        top: 50%;
+        height: 20px;
+        width: 20px;
+        top: 70%;
         margin-top:-14px;
         left: 1px;
         border-radius: 60px;
@@ -52,7 +54,7 @@ input{
     &:checked{
       & + label:before {
         width: $sw-width;
-        background: rgba(76,217,100,1);
+        background: $salomon;
         transition: width .2s cubic-bezier(0,0,0,.1) !important;
       }
 

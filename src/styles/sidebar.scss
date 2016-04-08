@@ -2,6 +2,8 @@
 @import "burger";
 
 .sidebar {
+  @include defaulttransition();
+
   z-index: 10;
   position: fixed;
   top: 0;
@@ -132,10 +134,10 @@
   }
 
   &.open {
-    min-width: 300px;
+    width: 250px;
 
     &.wide {
-      min-width: 700px;
+      min-width: 600px;
     }
 
     & + .blackLayer {
