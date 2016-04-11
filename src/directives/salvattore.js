@@ -9,12 +9,12 @@ import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
 
 
 var salvattore = Vue.directive('salvattore', {
-    params: ['a'],
+    params: ['l'],
 
     update: function (items) {
 
         //TODO: replace with global.offset
-        items = _.takeRight(items, this.params.a);
+        items = _.takeRight(items, this.params.l);
 
         var self = this,
             fragments = [];

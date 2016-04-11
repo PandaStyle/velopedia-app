@@ -11,11 +11,11 @@
         </div>
         <div class="item content">
             <div class="menu" v-show="!isMenuOpen">
-                <a class="menu-item news" v-link="{ path: '/news' }">
+                <a @click="trackMenuclick('News')" class="menu-item news" v-link="{ path: '/news' }">
                     <div class="menu-icon icon-news"></div>
                     <span class="menu-title">News</span>
                 </a>
-                <a class="menu-item insp" v-link="{ path: '/inspiration' }">
+                <a @click="trackMenuclick('Inspiration')" class="menu-item insp" v-link="{ path: '/inspiration' }">
                   <span class="menu-icon icon-image"></span>
                     <span class="menu-title">Inspiration</span>
                 </a>
@@ -63,6 +63,10 @@
         methods: {
             toggleMenu () {
                 store.dispatch('TOGGLE_MENU')
+            },
+
+            trackMenuclick(menuitem) {
+                mixpanel.track( menuitem + "Menu Click");
             }
         }
     }

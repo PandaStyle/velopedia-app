@@ -1,5 +1,5 @@
 <template>
-    <div class="feed-view grid inspiration" data-columns v-salvattore="items" v-bind:a="currentItemsLength"></div>
+    <div class="feed-view grid inspiration" data-columns v-salvattore="items" v-bind:l="currentItemsLength"></div>
 </template>
 
 
@@ -44,6 +44,8 @@
         },
 
         ready () {
+            mixpanel.track("Inspration page load");
+
             $(window).on("scrollstart", function(){ $('body').addClass('disable-hover');});
             $(window).on("scrollstop", this.scrollHanlder);
         },

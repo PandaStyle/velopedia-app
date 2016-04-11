@@ -50,6 +50,10 @@
             }
         },
 
+        ready () {
+            mixpanel.track("News page load");
+        },
+
         methods: {
             loadMore () {
                 console.log("loadmore");

@@ -19,6 +19,7 @@ import StravaItem from './components/StravaItem.vue'
 
 Vue.use(Router);
 Vue.use(VueResource);
+Vue.config.debug = true
 
 // routing
 var router = new Router({
