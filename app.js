@@ -1,4 +1,3 @@
-var NewRelic = require('newrelic');
 var Hapi = require('hapi');
 var Inert = require('inert');
 var strava = require('strava-v3');
