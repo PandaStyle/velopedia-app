@@ -1,4 +1,4 @@
 module.exports = {
     env: "production",
-    API_URL: "https://api.velopedia.co/"
+    API_URL: "http://api.velopedia.co/"
 };
