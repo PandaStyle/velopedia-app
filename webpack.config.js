@@ -4,7 +4,7 @@ var imports = require('imports-loader')
 var path = require('path')
 
 //TODO: this shouldn't go out to the internet for the request
-const HOST = process.env.NODE_ENV === 'production' ? "http://velopedia.co/" : "http://localhost:8080/";
+const HOST = process.env.NODE_ENV === 'production' ? "http://velopedia.co/" : "http://localhost:8082/";
 
 module.exports = {
   entry: './src/main.js',

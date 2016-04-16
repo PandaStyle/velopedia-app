@@ -7,7 +7,7 @@ var strava = require('strava-v3');
 var server = new Hapi.Server();
 server.register(Inert, function () {});
 server.connection({
-    port: 8080
+    port: 8082
 });
 
 server.state('strava_access_token', {
